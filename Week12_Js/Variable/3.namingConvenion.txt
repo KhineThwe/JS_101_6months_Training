@@ -1,0 +1,17 @@
+Naming Conventions
+---------------------
+1.abcABC   eg: age,Age,purchaseAmount,purchase_amount
+Camel Case 
+---------------
+purchaseAmount
+--------------------
+PI
+----------
+Pascal Case
+-----------
+eg: NumberOfDonuts
+2.123 (But Don't start with number)eg: num1,num2
+don't --> 1num,2num
+3.space don't
+4.underscore allowed  eg: date_of_birth
+5.+,-,.*&#@ ---> Special Character

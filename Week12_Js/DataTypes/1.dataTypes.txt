@@ -1,0 +1,13 @@
+A ,B,C   --> 1byte   --> 8bits = 1byte
+1,2,3  --> 1byte
+
+100,1234,999   ---> 1byte
+
+"Hello"
+
+Four Types of Data Types   --> Primitive Type
+-------------------------------
+1.Character 
+2.Number
+3.Boolean    --> true false
+4.String     "Hello"
