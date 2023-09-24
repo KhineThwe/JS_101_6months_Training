@@ -7,7 +7,7 @@ A ,B,C   --> 1byte   --> 8bits = 1byte
 
 Four Types of Data Types   --> Primitive Type
 -------------------------------
-1.Character 
-2.Number
+1.Character  
+2.Number 
 3.Boolean    --> true false
 4.String     "Hello"

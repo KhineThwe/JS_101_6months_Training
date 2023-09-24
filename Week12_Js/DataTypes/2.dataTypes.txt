@@ -1,6 +1,5 @@
 let blood: char = "A"; //char
 
-
 Number-- > int, Float
 Integer or Signed Integer  --> positive int , negative int
 

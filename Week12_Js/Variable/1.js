@@ -3,7 +3,7 @@
 //container ---> memory
 //variable declare
 //keyword name ---> declaration
-//assignment
+//assignment//initialization
 //syntax
 var age; //declaration
 age = 25; //assignment

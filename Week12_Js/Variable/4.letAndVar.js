@@ -5,7 +5,7 @@ let num2 = 3;
 
 {
   var num1 = 3;
-  let num2 = 3;
+  let num2 = 3; //local
 } //block
 
 eg: total = num1 + 2;
