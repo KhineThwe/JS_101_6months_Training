@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increment and Decrement Example</title>
+  </head>
+  <body>
+    <h1>Increment and Decrement Example</h1>
+    <p>Click the buttons to increment or decrement a value:</p>
+    <p id="value">0</p>
+
+    <button id="incrementBtn">Increment</button>
+    <button id="decrementBtn">Decrement</button>
+
+    <script>
+      // Get references to HTML elements
+      const valueElement = document.getElementById("value");
+      const incrementButton = document.getElementById("incrementBtn");
+      const decrementButton = document.getElementById("decrementBtn");
+
+      // Initial value
+      let counter = 0;
+
+      // Function to update the value on the web page
+      function updateValue() {
+        valueElement.textContent = counter;
+      }
+
+      // Event listener for increment button
+      incrementButton.addEventListener("click", function () {
+        counter++;
+        updateValue();
+      });
+
+      // Event listener for decrement button
+      decrementButton.addEventListener("click", function () {
+        counter--;
+        updateValue();
+      });
+
+      // Initial update of the value
+      updateValue();
+    </script>
+  </body>
+</html>
