@@ -1,0 +1,1 @@
+console.log("You are allowed to drink alcohol!");
