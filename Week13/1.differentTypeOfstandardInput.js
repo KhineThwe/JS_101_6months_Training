@@ -20,6 +20,5 @@ alert(username);
 //6.document.getElementById()//event handler
 
 //7.`` Back tick
-
 let num = 10;
 console.log(`The num is ${num}`);
