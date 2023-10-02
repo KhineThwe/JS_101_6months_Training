@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Logical Operators Example</title>
+  </head>
+  <body>
+    <h1>Logical Operators Example</h1>
+    <form id="logicForm">
+      <label for="input1">Enter the first input (true or false):</label>
+      <input type="text" id="input1" required /><br />
+
+      <label for="operator">Enter a logical operator (&&, ||, !):</label>
+      <input type="text" id="operator" required /><br />
+
+      <label for="input2">Enter the second input (true or false):</label>
+      <input type="text" id="input2" required /><br />
+
+      <input type="submit" value="Evaluate" />
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      // Get form and result element references
+      const logicForm = document.getElementById("logicForm");
+      const resultElement = document.getElementById("result");
+
+      // Add event listener for form submission
+      logicForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get user inputs
+        const input1 = document.getElementById("input1").value.toLowerCase();
+        const operator = document
+          .getElementById("operator")
+          .value.toLowerCase();
+        const input2 = document.getElementById("input2").value.toLowerCase();
+
+        // Evaluate the logical expression based on the operator
+        let result;
+        switch (operator) {
+          case "&&":
+            result = input1 === "true" && input2 === "true";
+            break;
+          case "||":
+            result = input1 === "true" || input2 === "true";
+            break;
+          case "!":
+            result = !(input1 === "true");
+            break;
+          default:
+            resultElement.textContent =
+              "Invalid operator. Please enter &&, ||, or !.";
+            return;
+        }
+
+        // Display the result
+        resultElement.textContent = `Result: ${result}`;
+      });
+    </script>
+  </body>
+</html>

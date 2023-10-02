@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discount Eligibility Checker</title>
+  </head>
+  <body>
+    <h1>Discount Eligibility Checker</h1>
+    <form id="eligibilityForm">
+      <label for="age">Enter your age:</label>
+      <input type="number" id="age" required /><br />
+
+      <label for="hasMembership"
+        >Do you have a membership? (true or false):</label
+      >
+      <input type="text" id="hasMembership" required /><br />
+
+      <label for="isStudent">Are you a student? (true or false):</label>
+      <input type="text" id="isStudent" required /><br />
+
+      <input type="submit" value="Check Eligibility" />
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      // Get form and result element references
+      const eligibilityForm = document.getElementById("eligibilityForm");
+      const resultElement = document.getElementById("result");
+
+      // Add event listener for form submission
+      eligibilityForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get user inputs
+        const age = parseInt(document.getElementById("age").value);
+        const hasMembership =
+          document.getElementById("hasMembership").value.toLowerCase() ===
+          "true";
+        const isStudent =
+          document.getElementById("isStudent").value.toLowerCase() === "true";
+
+        // Determine eligibility for discount based on conditions
+        let isEligible = false;
+
+        if (age >= 60 && hasMembership) {
+          isEligible = true;
+        } else if (age < 18 && isStudent) {
+          isEligible = true;
+        }
+
+        // Display the result
+        if (isEligible) {
+          resultElement.textContent =
+            "Congratulations! You are eligible for a discount.";
+        } else {
+          resultElement.textContent =
+            "Sorry, you are not eligible for a discount.";
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+    1.
+Enter your age: 65
+Do you have a membership? (true or false): true
+Are you a student? (true or false): false
+[Submit]
+
+Result: Congratulations! You are eligible for a discount.
+
+
+2.
+Enter your age: 22
+Do you have a membership? (true or false): false
+Are you a student? (true or false): true
+[Submit]
+
+Result: Sorry, you are not eligible for a discount.
+ -->

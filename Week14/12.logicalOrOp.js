@@ -12,3 +12,4 @@ const o7 = "Cat" || false; // t || f returns Cat
 //0  1 --> 1
 //1 1 --> 1
 //0 0 --> 0
+console.log(3 === 4);
