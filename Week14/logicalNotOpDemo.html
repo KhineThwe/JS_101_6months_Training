@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Terms and Conditions Agreement</title>
+  </head>
+  <body>
+    <h1>Terms and Conditions Agreement</h1>
+    <form id="termsForm">
+      <label for="agree">I agree to the terms and conditions:</label>
+      <input type="checkbox" id="agree" required /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      // Get form and result element references
+      const termsForm = document.getElementById("termsForm");
+      const resultElement = document.getElementById("result");
+
+      // Add event listener for form submission
+      termsForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get user input (checkbox status)
+        const agree = document.getElementById("agree").checked;
+
+        // Check if the user agreed to the terms and conditions using the NOT operator
+        if (!agree) {
+          //false
+          resultElement.textContent =
+            "You must agree to the terms and conditions to proceed.";
+        } else {
+          resultElement.textContent =
+            "Thank you for agreeing to the terms and conditions.";
+        }
+      });
+    </script>
+  </body>
+</html>
