@@ -3,3 +3,5 @@
 3.Boolean
 4.Character
 5.null and undefined,NaN ---> Not a Number
+
+
