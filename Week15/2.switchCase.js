@@ -1,3 +1,16 @@
+// syntax
+//switch (expression) {
+//     case value1:
+//       statements
+//     case value2:
+//       statements
+//     // …
+//     case valueN:
+//       statements
+//     default:
+//       statements
+//   }
+
 var marks = 70;
 switch (marks) {
   case 40: //if marks == 40
