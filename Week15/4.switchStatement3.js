@@ -1,4 +1,4 @@
-const foo = 0;
+let foo = 0;
 switch (foo) {
   case -1:
     console.log("negative 1");

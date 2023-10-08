@@ -1,17 +1,17 @@
-var message = "say_hi";
-switch (message) {
+let msg1 = "say_hi";
+switch (msg1) {
   case "say_hello": {
-    var msg = "hello";
-    console.log(msg);
+    let msg1 = "hello";
+    console.log(msg1);
     break;
   }
   case "say_hi": {
-    var msg = "hi";
-    console.log(msg);
+    let msg2 = "hi";
+    console.log(msg2);
     break;
   }
   default: {
-    var msg = "default";
-    console.log(msg);
+    let msg1 = "default";
+    console.log(msg1);
   }
 }
