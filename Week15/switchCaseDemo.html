@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grade Converter</title>
+  </head>
+  <body>
+    <h1>Grade Converter</h1>
+    <form id="gradeForm">
+      <label for="numericGrade">Enter your numeric grade:</label>
+      <input type="number" id="numericGrade" required /><br />
+
+      <input type="submit" value="Convert" />
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      // Get form and result element references
+      const gradeForm = document.getElementById("gradeForm");
+      const resultElement = document.getElementById("result");
+
+      // Add event listener for form submission
+      gradeForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get the numeric grade from the input
+        const numericGrade = parseFloat(
+          document.getElementById("numericGrade").value
+        );
+
+        // Use a switch statement to convert the grade to a letter grade
+        let letterGrade;
+
+        switch (true) {
+          case numericGrade >= 90:
+            letterGrade = "A";
+            break;
+          case numericGrade >= 80:
+            letterGrade = "B";
+            break;
+          case numericGrade >= 70:
+            letterGrade = "C";
+            break;
+          case numericGrade >= 60:
+            letterGrade = "D";
+            break;
+          default:
+            letterGrade = "F";
+        }
+
+        // Display the result
+        resultElement.textContent = `Your letter grade is: ${letterGrade}`;
+      });
+    </script>
+  </body>
+</html>
