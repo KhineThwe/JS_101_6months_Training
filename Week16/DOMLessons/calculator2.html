@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <form id="calculatorForm">
+      <label for="num1">Enter the first number:</label>
+      <input type="text" id="num1" required /><br />
+
+      <label for="operator">Enter an operator (+, -, *, /):</label>
+      <input type="text" id="operator" required /><br />
+
+      <label for="num2">Enter the second number:</label>
+      <input type="text" id="num2" required /><br />
+
+      <input type="submit" value="Calculate" />
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      // Get form and result element references
+      const calculatorForm = document.getElementById("calculatorForm");
+      const resultElement = document.getElementById("result");
+
+      // Add event listener for form submission
+      calculatorForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get user inputs
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const operator = document.getElementById("operator").value;
+        const num2 = parseFloat(document.getElementById("num2").value);
+
+        // Check if inputs are valid numbers
+        if (isNaN(num1) || isNaN(num2)) {
+          resultElement.textContent =
+            "Invalid input. Please enter valid numbers.";
+          return;
+        }
+
+        let result;
+
+        // Perform calculations based on the operator
+        switch (operator) {
+          case "+":
+            result = num1 + num2;
+            break;
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            if (num2 === 0) {
+              resultElement.textContent = "Cannot divide by zero.";
+              return;
+            }
+            result = num1 / num2;
+            break;
+          default:
+            resultElement.textContent =
+              "Invalid operator. Please enter +, -, *, or /.";
+            return;
+        }
+
+        // Display the result
+        resultElement.textContent = `Result: ${result}`;
+      });
+    </script>
+  </body>
+</html>
