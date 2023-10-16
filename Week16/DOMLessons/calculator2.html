@@ -29,12 +29,14 @@
       calculatorForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        var number1 = document.getElementById("num1").value;
         // Get user inputs
-        const num1 = parseFloat(document.getElementById("num1").value);
+        const num1 = parseFloat(number1);
         const operator = document.getElementById("operator").value;
         const num2 = parseFloat(document.getElementById("num2").value);
 
         // Check if inputs are valid numbers
+        //isNaN(num1)
         if (isNaN(num1) || isNaN(num2)) {
           resultElement.textContent =
             "Invalid input. Please enter valid numbers.";
