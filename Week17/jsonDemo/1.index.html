@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card List</title>
+    <style>
+      /* Basic styling for the card list */
+      .card-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      /* Styling for individual cards */
+      .card {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for card titles */
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      /* Styling for card images */
+      .card-img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Styling for card descriptions */
+      .card-description {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showAll()">Show All</button>
+    <div class="card-list" id="card_list">
+      <!-- Card 1 -->
+      <div class="card">
+        <h2 class="card-title">Card 1</h2>
+        <p class="card-description">This is the description for Card 1.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <h2 class="card-title">Card 2</h2>
+        <p class="card-description">This is the description for Card 2.</p>
+      </div>
+
+      <!-- Add more cards here -->
+    </div>
+    <script>
+      let data = [];
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => (data = json));
+      function showAll() {
+        let htmlElement = "";
+        data.forEach((user) => {
+          htmlElement += `
+                <div class="card">
+                    <h2 class="card-title">${user.username}</h2>
+                    <p class="card-description">${user.name}</p>
+                </div>
+                `;
+        });
+        document.getElementById("card_list").innerHTML = htmlElement;
+      }
+    </script>
+  </body>
+</html>
