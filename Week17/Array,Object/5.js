@@ -8,5 +8,5 @@ let person = {
     bike: "Moutain Bike",
   },
 };
-console.log(person.own);
+console.log(person.own.car);
 console.log("Your Sister is: " + person.family[2]);

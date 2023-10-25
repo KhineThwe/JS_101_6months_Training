@@ -5,6 +5,5 @@ function area(width, height) {
 }
 
 //return
-
 let result = area(3, 4);
 console.log(result);
