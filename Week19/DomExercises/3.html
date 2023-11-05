@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="master2">I love Javascript</p>
+    <p class="master2">I love HTML</p>
+    <p class="master2">I love CSS</p>
+
+    <h1>I want a job</h1>
+
+    <button id="btn">Click me</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", function master() {
+        var master = document.getElementsByClassName("master2");
+        master[2].innerHTML += "And I need a job";
+      });
+    </script>
+  </body>
+</html>
