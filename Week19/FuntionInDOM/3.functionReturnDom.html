@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3</title>
+  </head>
+  <body>
+    <p>Click the following button to call the function.</p>
+    <form action="#">
+      <input type="button" value="Say Hello" onclick="secondFunction()" />
+    </form>
+
+    <script>
+      function concatenate(first, last) {
+        var full;
+        full = first + last;
+        return full;
+      }
+      function secondFunction() {
+        var result;
+        result = concatenate("Khine", "Thwe");
+        document.write(result);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Events or actions 
+-----------------
+JavaScript Events 
+------------------
+1.Click Events  --> eg: button,link
+2.Mouseover or Mouseout Event --> Occur when the mouse pointer enters or leaves an element,often used for 
+creating hover effects.
+3.Keydown,keyup and Keypress Events --> Keyboard Input 
+4.Submit Event --> form is submitted.
+5.Change Event --> dropdown or checkbox 
+6.Custom events 
+7.Scroll events 
