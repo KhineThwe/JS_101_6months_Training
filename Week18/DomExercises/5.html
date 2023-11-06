@@ -1,0 +1,53 @@
+<!-- 
+    how to create elements 
+    how to append element 
+    how to insert one element before another
+    how to replace 
+    how to remove
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="firstchild">i am a first child</div>
+      <p id="secondchild">i am the second child</p>
+      <h4>i am alive</h4>
+      <h1>hello world</h1>
+      <p>i am the last child</p>
+    </div>
+
+    <script>
+      /*createElement method*/
+      const createE1 = document.createElement("div"); //<div></div>
+      const innerhtml = (createE1.innerHTML = "I am a frontend developer"); //<div>I am a frontend developer</div>
+      console.log(innerhtml);
+
+      /*how to append an element*/
+      const parentE1 = document.getElementById("parent");
+      parentE1.appendChild(createE1);
+
+      /*how to insert one element before another
+    --> insertBefore(new,old)*/
+      const firstChildE1 = document.getElementById("firstchild");
+
+      const creatE2 = document.createElement("div");
+      const innerhtml2 = (creatE2.innerHTML = "I am a backend developer");
+
+      parentE1.insertBefore(creatE2, firstChildE1);
+
+      /*how to replace element in dom
+      replaceChild(new,old)*/
+
+      const creatE3 = document.createElement("div");
+      const innerhtml3 = (creatE3.innerHTML = "I am a replace child");
+
+      const secondChildE1 = document.getElementById("secondchild");
+      parentE1.replaceChild(creatE3, secondChildE1);
+    </script>
+  </body>
+</html>
