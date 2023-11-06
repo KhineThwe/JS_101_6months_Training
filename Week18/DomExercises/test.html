@@ -23,27 +23,23 @@
 
     <script>
       /*createElement method*/
-      const createE1 = document.createElement("div"); //<div></div>
-      const innerhtml = (createE1.innerHTML = "I am a frontend developer"); //<div>I am a frontend developer</div>
+      const createE1 = document.createElement("div");
+      const text = (creatE1.innerHTML = "I am frontend developer.");
 
       /*how to append an element*/
       const parentE1 = document.getElementById("parent");
       parentE1.appendChild(createE1);
 
-      /*how to insert one element before another
-    --> insertBefore(new,old)*/
+      /*how to insert one element before another, insertBefore(new,old)*/
       const firstChildE1 = document.getElementById("firstchild");
+      const createE2 = document.createElement("div");
+      const text2 = (createE2.innerHTML = "I am backend developer.");
 
-      const creatE2 = document.createElement("div");
-      const innerhtml2 = (creatE2.innerHTML = "I am a backend developer");
+      parentE1.insertBefore(createE2, firstChildE1);
 
-      parentE1.insertBefore(creatE2, firstChildE1);
-
-      /*how to replace element in dom
-      replaceChild(new,old)*/
-
+      /*how to replace element in dom. replaceChild(new,old)*/
       const creatE3 = document.createElement("div");
-      const innerhtml3 = (creatE3.innerHTML = "I am a replace child");
+      const text3 = (creatE3.innerHTML = "I am a replace child");
 
       const secondChildE1 = document.getElementById("secondchild");
       parentE1.replaceChild(creatE3, secondChildE1);
