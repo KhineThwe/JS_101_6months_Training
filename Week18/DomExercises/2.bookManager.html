@@ -24,19 +24,20 @@
       const bookList = document.getElementById("book-ul");
       const addBookForm = document.getElementById("add-book-form");
 
-      //function to create a book item with edit and delete buttons
+      //function to create a book item
       function createBookElement(bookTitle) {
+        //Harry Potter
         const li = document.createElement("li");
         const titleElement = document.createElement("span");
 
-        titleElement.textContent = bookTitle;
-        li.appendChild(titleElement); //   +=
+        titleElement.textContent = bookTitle; //<span>Hi</span>
+        li.appendChild(titleElement); //<li><span>Hi</span></li>
 
         const editButton = document.createElement("button");
         editButton.textContent = "Edit";
 
         editButton.addEventListener("click", () => {
-          const newTitle = prompt("Edit book Tile", bookTitle);
+          const newTitle = prompt("Edit book Title", bookTitle);
           if (newTitle) {
             titleElement.textContent = newTitle;
           }
@@ -49,19 +50,18 @@
             li.remove();
           }
         });
-
         li.appendChild(editButton);
         li.appendChild(deleteButton);
         return li;
       }
-
       addBookForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const bookTitleInput = document.getElementById("book-title");
-        const bookTitle = bookTitleInput.value; //Harry Potter
+        const bookTitle = bookTitleInput.value;
 
         if (bookTitle) {
+          //createElement
           const bookElement = createBookElement(bookTitle);
           bookList.appendChild(bookElement);
           bookTitleInput.value = "";
@@ -70,3 +70,6 @@
     </script>
   </body>
 </html>
+<!-- var -- global scope -- can re-declared and can updated
+     let --- block scope  -- cannot re-declared and can updated 
+    const - constant - cannot re-declared  and cannot updated-->
