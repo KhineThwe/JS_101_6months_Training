@@ -6,9 +6,9 @@ function myFunction() {
   console.log(d.getDate()); //17
   console.log(d.getDay()); //5(=Friday)
   console.log(d.getHours()); //10
-  console.log(d.getMinutes()); //28
-  console.log(d.getSeconds()); //15
-  console.log(d.getMilliseconds()); //777
+  console.log(d.getMinutes()); //30
+  console.log(d.getSeconds()); //16
+  console.log(d.getMilliseconds()); //778
   console.log(d.getTime()); //1594949295777
 
   console.log(d.getTimezoneOffset()); //-540
