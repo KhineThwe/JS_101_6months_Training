@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <button id="show">Show</button>
+      <button id="hide">Hide</button>
+      <button id="toggle">Toggle</button>
+      <img
+        id="myImg"
+        src="https://th.bing.com/th/id/R.230a4ad6320a78ec75ef13f71be671ea?rik=NL0eDFygiHquWw&pid=ImgRaw&r=0"
+        alt=""
+        width="300px"
+        height="300px"
+      />
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#show").click(function () {
+        $("#myImg").show(1000);
+      });
+      $("#hide").click(function () {
+        $("#myImg").hide();
+      });
+      $("#toggle").click(function () {
+        $("#myImg").toggle();
+      });
+    });
+  </script>
+</html>
