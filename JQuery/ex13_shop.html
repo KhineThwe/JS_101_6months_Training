@@ -105,9 +105,7 @@
     function detail(id) {
       const new_url = "https://fakestoreapi.com/products/" + id;
       fetch(new_url)
-        .then((response) => {
-          response.json();
-        })
+        .then((response) => response.json())
         .then((data) => {
           card.innerHTML = `  
             <div class="card-body">
