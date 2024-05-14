@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Shopping</title>
+    <title>User Information</title>
     <style>
       body {
         padding: 0;
         margin: 0;
+        font-family: Arial, sans-serif;
       }
       .container {
         margin: 30px;
@@ -18,109 +19,57 @@
         width: 100%;
         text-align: left;
         border-collapse: collapse;
-        border: 1px solid #04aa6d30;
+        border: 1px solid #ccc;
       }
-
       .table thead {
-        background-color: black;
-        color: white;
+        background-color: #f2f2f2;
       }
-
       .table tr,
       .table td,
       .table th {
         padding: 10px 15px;
-      }
-
-      .table tbody tr:nth-child(odd) {
-        background-color: #eeeeee40;
-      }
-      .table tbody tr:hover(odd) {
-        background-color: #eeeeee99;
-      }
-      .api_image {
-        width: 70px;
-      }
-      .card {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-      }
-      .card-body {
-        width: 60%;
-        border: 1px solid black;
-        box-shadow: 1px 1px 10px #fefefe30;
-        display: flex;
-      }
-      .card-body img {
-        width: 200px;
-      }
-      .info {
-        padding-left: 50px;
+        border: 1px solid #ddd;
       }
     </style>
   </head>
   <body>
-    <div class="card" id="card">
-    
-      </div>
-    </div>
     <div class="container">
       <table class="table">
         <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Price</th>
-            <th>Rating</th>
-            <th>Image</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
           </tr>
         </thead>
-        <tbody id="page"></tbody>
+        <tbody id="userTable"></tbody>
       </table>
     </div>
-  </body>
-  <script>
-    let card = document.getElementById("card");
-    let page = document.getElementById("page");
-    let list = "";
-    //with async await fetch
-    card.style.display = "none";
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        for (let i = 0; i < result.length; i++) {
-          list += ` <tr onclick="detail(${result[i].id})">
-                <td>${result[i].id}</td>
-                <td>${result[i].title}</td>
-                <td>${result[i].price}</td>
-                <td>${result[i].rating.rate}</td>
-                <td><a href="${result[i].image}" target="_blink"><img src="${result[i].image}" class="api_image"/></a></td>
-            </tr>`;
-        }
+    <script>
+      const userTable = document.getElementById("userTable");
+      let userList = "";
 
-        //    list = `<img src="${result[0].image}"  />`;
-        page.innerHTML = list;
-      })
-      .catch((err) => console.log(err));
-
-    function detail(id) {
-      fetch("https://fakestoreapi.com/products/" + id)
+      const apiUrl = "https://jsonplaceholder.typicode.com/users";
+      fetch(apiUrl)
         .then((response) => response.json())
-        .then((data) => {
-           card.innerHTML = `  
-        <div class="card-body">
-        <img
-          src="${data.image}"
-          alt="" />
-        <div class="info">
-          <h3>${data.title}</h3>
-          <h3>${data.price}</h3>
-          <h3>${data.rating.rate}</h3>
-        </div>`;
-        card.style.display = "block";
-        });
-    }
-  </script>
+        .then((users) => {
+          users.forEach((user) => {
+            userList += `
+              <tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td>${user.website}</td>
+              </tr>
+            `;
+          });
+
+          userTable.innerHTML = userList;
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    </script>
+  </body>
 </html>
